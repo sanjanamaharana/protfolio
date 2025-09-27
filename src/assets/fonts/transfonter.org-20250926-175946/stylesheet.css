@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Centra No2 TRIAL';
+    src: url('CentraNo2TRIAL-Medium.woff2') format('woff2'),
+        url('CentraNo2TRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
