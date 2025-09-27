@@ -374,6 +374,9 @@ button:focus-visible {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body{
+     overflow-x: hidden;
+  }
   .banner .text-col {
     text-align: center;
     padding: 20px;
