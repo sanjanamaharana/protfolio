@@ -4,7 +4,61 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* 1. Box Sizing Reset (Highly recommended) */
+:root {
+    box-sizing: border-box; 
+}
 
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* 2. Aggressive Body/HTML Reset (CRITICAL) */
+html, body {
+    /* Ensures the container for all content is exactly the screen width */
+    width: 100vw !important; 
+    /* Hides anything that still pushes outside this boundary */
+    overflow-x: hidden !important; 
+    /* Remove default margins/padding which often cause scroll on mobile */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 3. Component Container Fixes */
+/* Targeting primary wrappers to ensure they never exceed screen width */
+#root, 
+.App, 
+.container-fluid, /* If you are using Bootstrap's fluid container */
+section { /* Target all sections (Banner, Skills, Projects, etc.) */
+    width: 100% !important;
+    max-width: 100% !important;
+    /* Often negative margins or large paddings on the side cause the issue */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* 4. Background Fix (Specific to the Banner/Skills area) */
+/* If the issue is related to the background gradient or image extending */
+.banner-background, /* Use the actual class name of your background element */
+.skill-bx /* Targeting the container for the skills section */
+{
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* 5. Utility for Testing */
+/* If you still have trouble, apply this to a specific element to see if it fixes it. */
+.overflow-safe {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
